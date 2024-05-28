@@ -9,7 +9,8 @@ export default function Home() {
   return (
    <div>
     <h1>Welcome to my page</h1>
-    <button onClick={productPage}>products</button>
+    <h3>Go to products</h3>
+    <button onClick={productPage}>Click here</button>
    </div>
   );
 }
