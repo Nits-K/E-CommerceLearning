@@ -1,5 +1,6 @@
 "use client"
 import {useRouter} from "next/navigation";
+import Products from "./products/page";
 
 export default function Home() {
     const router = useRouter();
@@ -8,9 +9,7 @@ export default function Home() {
     }
   return (
    <div>
-    <h1>Welcome to my page</h1>
-    <h3>Go to products</h3>
-    <button onClick={productPage}>Click here</button>
+    <Products/>
    </div>
   );
 }

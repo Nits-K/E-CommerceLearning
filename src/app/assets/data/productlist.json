@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "brand":"louis vetton",
+        "size":"XL",
+        "price":540,
+        "image":"image1.avif"
+    },
+    {
+        "id":2,
+        "brand":"louis vetton",
+        "size":"XL",
+        "price":510,
+        "image":"image2.avif"
+    },
+    {
+        "id":3,
+        "brand":"louis vetton",
+        "size":"M",
+        "price":500,
+        "image":"image3.avif"
+    },
+    {
+        "id":4,
+        "brand":"louis vetton",
+        "size":"XXL",
+        "price":560,
+        "image":"image4.avif"
+    },
+    {
+        "id":5,
+        "brand":"louis vetton",
+        "size":"L",
+        "price":540,
+        "image":"image5.avif"
+    }
+]
