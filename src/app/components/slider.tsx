@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
@@ -36,13 +37,10 @@ const Slider = () => {
       prevButton.addEventListener("click", prevSlide);
     }
 
-    
     updateCarousel();
 
-    
     const autoSlideInterval = setInterval(nextSlide, 3000);
 
-   
     return () => {
       if (nextButton && prevButton) {
         nextButton.removeEventListener("click", nextSlide);
