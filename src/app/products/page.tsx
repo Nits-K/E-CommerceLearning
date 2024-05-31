@@ -1,4 +1,5 @@
 import Header from "@/app/components/Header";
+import Slider from "../components/slider";
 import Card from "@/app/components/card";
 import productlist from "@/app/assets/data/productlist.json";
 
@@ -7,8 +8,8 @@ const products = () => {
     <div>
       <Header />
       {/* <Card/> */}
-      
-        <div className="card-list">
+      <Slider/>
+        <div className="card-list flex-row flex-wrap space-x-4 object-cover sm:flex md:flex justify-center gap-4 mt-4">
         {productlist.map((product)=> (
           <Card
             id={product.id}

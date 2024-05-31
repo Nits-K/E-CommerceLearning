@@ -1,35 +1,35 @@
 [
     {
         "id":1,
-        "brand":"louis vetton",
+        "brand":"Jack & Jones",
         "size":"XL",
         "price":540,
-        "image":"image1.avif"
+        "image":"image5.avif"
     },
     {
         "id":2,
-        "brand":"louis vetton",
+        "brand":"Flick",
         "size":"XL",
         "price":510,
-        "image":"image2.avif"
+        "image":"image4.avif"
     },
     {
         "id":3,
-        "brand":"louis vetton",
+        "brand":"Ripper",
         "size":"M",
         "price":500,
-        "image":"image3.avif"
+        "image":"image5.avif"
     },
     {
         "id":4,
-        "brand":"louis vetton",
+        "brand":"Roadster",
         "size":"XXL",
         "price":560,
         "image":"image4.avif"
     },
     {
         "id":5,
-        "brand":"louis vetton",
+        "brand":"Flick",
         "size":"L",
         "price":540,
         "image":"image5.avif"
