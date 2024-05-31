@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import CartPage from "../(pages)/cart/page";
 
 interface cardProps {
   id: number;
@@ -32,7 +33,7 @@ const Card = ({ id, brand, size, price, image }: cardProps) => {
           {price}
         </span>
       </div>
-      <div className="flex justify-center mb-2">
+      <div  className="flex justify-center mb-2">
         <button className="flex items-center justify-center bg-gray-900 px-2 py-1  text-sm text-white transition hover:bg-gray-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
