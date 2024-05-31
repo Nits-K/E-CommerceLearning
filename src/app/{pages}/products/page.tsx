@@ -1,6 +1,6 @@
-import Header from "@/app/components/Header";
+import Header from "@/app/{pages}/components/Header";
 import Slider from "../components/slider";
-import Card from "@/app/components/card";
+import Card from "@/app/{pages}/components/card";
 import productlist from "@/app/assets/data/productlist.json";
 
 const products = () => {

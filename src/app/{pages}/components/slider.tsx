@@ -5,6 +5,8 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 const Slider = () => {
   useEffect(() => {
     const carousel = document.querySelector("#default-carousel");
+    if(!carousel)
+      return;
     const items = carousel.querySelectorAll("[data-carousel-item]");
     const totalItems = items.length;
     let currentIndex = 0;
@@ -27,8 +29,11 @@ const Slider = () => {
     };
 
     const nextButton = carousel.querySelector("[data-carousel-next]");
+    if(!nextButton)
+      return;
     const prevButton = carousel.querySelector("[data-carousel-prev]");
-
+    if(!prevButton)
+      return;
     nextButton.addEventListener("click", nextSlide);
     prevButton.addEventListener("click", prevSlide);
 
