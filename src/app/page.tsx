@@ -1,6 +1,6 @@
 "use client"
 import {useRouter} from "next/navigation";
-import Products from "./products/page";
+import Products from "./{pages}/products/page";
 
 export default function Home() {
     const router = useRouter();
