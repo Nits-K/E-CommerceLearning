@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import CartLayout from "./cartLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Tees by TINTIN",
-  description: "Get latest trends t-shirts",
+  title: "Tintin tees",
+  description: "Cool and funky T-shirts",
 };
 
 export default function RootLayout({
@@ -16,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <CartLayout>
+          {children}
+        </CartLayout>
+      </body>
     </html>
   );
 }
