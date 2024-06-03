@@ -1,9 +1,8 @@
-
 "use client";
 
 import React from 'react';
 import { Inter } from 'next/font/google';
-import { CounterProvider } from './context/cartContext';
+import { CounterProvider } from '../context/cartContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
