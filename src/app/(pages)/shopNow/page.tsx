@@ -34,7 +34,7 @@ const Shop = () => {
       <Header />
       {searchQuery && (
         <div className="mt-4">
-          <h2 className="text-center text-2xl font-bold">Search Results for{searchQuery}"</h2>
+          <h2 className="text-center text-2xl font-bold">Search Results for{searchQuery}</h2>
         </div>
       )}
       <div className="card-list flex-row flex-wrap space-x-4 object-cover sm:flex md:flex justify-center gap-4 mt-4">
