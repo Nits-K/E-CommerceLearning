@@ -1,3 +1,5 @@
+
+"use client"
 import Header from "@/app/components/Header";
 import Slider from "../../components/slider";
 import Card from "@/app/components/card";
