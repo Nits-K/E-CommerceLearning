@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 const PaymentCheckout = (orderDetails: any) => {
   useEffect(() => {
-    console.log("Hi checkout", orderDetails);
+    // console.log("Hi checkout", orderDetails);
     
     if (!orderDetails.order.order) return;
 
