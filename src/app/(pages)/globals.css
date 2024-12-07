@@ -8,6 +8,28 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.viewer-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 50vw;
+  min-height: 60vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+canvas {
+  height: 50vh;
+}
+
+.viewer-popup .close {
+  color: #000;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -25,6 +47,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
 
 @layer utilities {
   .text-balance {
