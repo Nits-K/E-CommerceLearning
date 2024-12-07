@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import Viewer from '../../components/viewer'
 
-const products = () => {
+const Products = () => {
   const [viewerDetails, setViewerDetails]=useState({
     viewID: "",
     isVisible: false
@@ -27,7 +27,7 @@ const products = () => {
             size={product.size}
             price={product.price}
             image={product.image}
-            viewerDetails={viewerDetails}
+            // viewerDetails={viewerDetails}
             setViewerDetails={setViewerDetails}
           />
         ))}
@@ -43,4 +43,4 @@ const products = () => {
     </div>
   );
 };
-export default products;
+export default Products;

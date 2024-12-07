@@ -8,11 +8,11 @@ interface CardProps {
   size: string;
   price: number;
   image: string;
-  viewerDetails:object;
+  // viewerDetails:object;
   setViewerDetails:Function;
 }
 
-const Card = ({ id, brand, size, price, image,viewerDetails,setViewerDetails }: CardProps) => {
+const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => {
   const { cart, addTocart, remove } = useCart();
 
   const handleAddToCart = (id: number) => {
