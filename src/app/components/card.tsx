@@ -50,7 +50,7 @@ const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => 
         </span>
       </div>
       { (
-        <div className="flex justify-center mb-2">
+        <div className="flex justify-center mb-2 gap-2">
           <button
             className="flex items-center justify-center bg-gray-900 px-2 py-1 text-sm text-white transition hover:bg-gray-700"
             onClick={() => handleAddToCart(id)}
@@ -65,9 +65,9 @@ const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => 
             </svg>
             {cart.includes(id) ? "Added to cart" : "Add to cart"}
           </button>
-          <br />
+          
           <button
-          className=" bg-gray-900 px-2 py-1 text-sm text-white transition hover:bg-gray-700" onClick={handleViewer}
+          className=" bg-gray-900 px-4 py-1 text-sm text-white transition hover:bg-gray-700" onClick={handleViewer}
           >3D viewer
           </button>
         </div>

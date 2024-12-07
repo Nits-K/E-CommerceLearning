@@ -79,8 +79,10 @@ useEffect(()=> {
           ) : (
             <p className="text-center text-gray-600">Your cart is empty</p>
           )}
+          
         </div>
       </div>
+      {/* <Footer/> */}
     </>
   );
 };
