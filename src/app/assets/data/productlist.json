@@ -11,7 +11,7 @@
         "brand":"Flick",
         "size":"XL",
         "price":510,
-        "image":"image4.avif"
+        "image":"image5.avif"
     },
     {
         "id":3,
@@ -25,7 +25,7 @@
         "brand":"Roadster",
         "size":"XXL",
         "price":560,
-        "image":"image4.avif"
+        "image":"image5.avif"
     },
     {
         "id":5,
