@@ -10,8 +10,8 @@ Title: T-shirt
 import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export default function Tshirt(props) {
-  const { nodes, materials } = useGLTF('/images/tshirt1.gltf')
+export function Model(props) {
+  const { nodes, materials } = useGLTF('/tshirt1.gltf')
   return (
     <group {...props} dispose={null}>
       <group position={[0.537, -218.685, -0.537]} rotation={[Math.PI / 2, 0, Math.PI / 2]}>
@@ -34,4 +34,4 @@ export default function Tshirt(props) {
   )
 }
 
-useGLTF.preload('/images/tshirt1.gltf')
+useGLTF.preload('/tshirt1.gltf')
