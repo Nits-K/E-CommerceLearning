@@ -1,5 +1,6 @@
 "use client";
 import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 import Card from "@/app/components/card"; 
 import productlist from "@/app/assets/data/productlist.json";
 import React, { useEffect, useState } from "react";
@@ -36,6 +37,9 @@ const Shop = () => {
   return (
     <div>
       <Header />
+      <p className="mt-12 mb-8 text-gray-50 text-4xl justify-center items-center flex font-bold">
+        Our Products
+      </p>
       {searchQuery && (
         <div className="mt-4">
           <h2 className="text-center text-2xl font-bold">
@@ -75,6 +79,7 @@ const Shop = () => {
             ))
         )}
       </div>
+      <Footer/>
     </div>
   );
 };
