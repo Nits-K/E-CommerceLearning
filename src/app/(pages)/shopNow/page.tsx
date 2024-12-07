@@ -5,11 +5,15 @@ import productlist from "@/app/assets/data/productlist.json";
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 
-
 const Shop = () => {
   const [filteredProducts, setFilteredProducts] = useState(productlist);
   const [searchQuery, setSearchQuery] = useState<string | null>(null);
   const router = useRouter();
+
+  const handleSetViewerDetails = (details: any) => {
+    console.log("Viewer Details:", details);
+    // Implement functionality to set viewer details, e.g., updating a modal or state
+  };
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -34,7 +38,9 @@ const Shop = () => {
       <Header />
       {searchQuery && (
         <div className="mt-4">
-          <h2 className="text-center text-2xl font-bold">Search Results for{searchQuery}</h2>
+          <h2 className="text-center text-2xl font-bold">
+            Search Results for {searchQuery}
+          </h2>
         </div>
       )}
       <div className="card-list flex-row flex-wrap space-x-4 object-cover sm:flex md:flex justify-center gap-4 mt-4">
@@ -47,6 +53,7 @@ const Shop = () => {
               size={product.size}
               price={product.price}
               image={product.image}
+              setViewerDetails={handleSetViewerDetails} // Pass the function here
             />
           ))
         ) : (
@@ -63,6 +70,7 @@ const Shop = () => {
                 size={product.size}
                 price={product.price}
                 image={product.image}
+                setViewerDetails={handleSetViewerDetails} // Pass the function here as well
               />
             ))
         )}
