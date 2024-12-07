@@ -11,7 +11,7 @@ import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/tshirt.gltf')
+  const { nodes, materials } = useGLTF('/tshirt1.gltf')
   return (
     <group {...props} dispose={null}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.039}>
@@ -24,4 +24,4 @@ export default function Model(props) {
   )
 }
 
-useGLTF.preload('/tshirt.gltf')
+useGLTF.preload('/tshirt1.gltf')
