@@ -65,6 +65,7 @@ const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => 
             </svg>
             {cart.includes(id) ? "Added to cart" : "Add to cart"}
           </button>
+          <br />
           <button
           className=" bg-gray-900 px-2 py-1 text-sm text-white transition hover:bg-gray-700" onClick={handleViewer}
           >3D viewer
