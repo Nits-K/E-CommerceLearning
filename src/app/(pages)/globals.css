@@ -8,22 +8,28 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+body:has(.viewer-popup) {
+  overflow: hidden;
+}
+
 .viewer-popup {
   position: fixed;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  width: 50vw;
-  min-height: 60vh;
+  width: 100vw;
+  height: 100vh;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  overflow: hidden;
+  z-index: 9999;
 }
 
 canvas {
-  height: 50vh;
+  height: 100vh;
 }
 
 .viewer-popup .close {
@@ -47,8 +53,6 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
-
 
 @layer utilities {
   .text-balance {
