@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect} from "react";
+import React from "react";
 import { useCart } from "../context/cartContext";
 
 interface CardProps {
@@ -8,70 +8,71 @@ interface CardProps {
   size: string;
   price: number;
   image: string;
-  // viewerDetails:object;
-  setViewerDetails:Function;
+  viewId: string;
+  setViewerDetails: (details: { isVisible: boolean; viewId: string }) => void;
 }
 
-const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => {
-  const { cart, addTocart, remove } = useCart();
+const Card = ({
+  id,
+  brand,
+  size,
+  price,
+  image,
+  viewId,
+  setViewerDetails,
+}: CardProps) => {
+  const { cart, addTocart } = useCart();
 
   const handleAddToCart = (id: number) => {
     addTocart(id);
   };
 
-  const handleRemove = (id: number) => {
-    remove(id);
-  };
-  const handleViewer=()=>{
+  const handleViewer = () => {
     setViewerDetails({
-      isVisible: true, viewId:""
-    })
-  }
+      isVisible: true,
+      viewId, // Pass the viewId to the parent
+    });
+  };
+
   return (
-    <div className="bg-white border-white border-2 max-w-sm rounded overflow-hidden shadow-lg flex flex-col m-4">
-      <div className="aspect-w-3 aspect-h-4">
+    <div className="bg-white border-1 border-gray-200 max-w-sm rounded-lg shadow-lg flex flex-col m-4 hover:shadow-xl transition-shadow">
+      <div className="aspect-w-4 aspect-h-6 rounded-t-lg overflow-hidden">
         <img
-          className="w-full object-cover"
+          className="w-full h-full object-cover"
           src={`/images/${image}`}
           alt="T-shirts"
         />
       </div>
-      <div className="px-6">
-        <div className="font-bold text-gray-600 font-serif text-xl mb-2">
-          T-shirt By - {brand}
+      <div className="p-4">
+        <h3 className="font-bold text-gray-800 font-serif text-base mb-2">
+          {brand}
+        </h3>
+        <div className="flex flex-wrap gap-2 mb-4">
+          <span className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">
+            Size: {size}
+          </span>
+          <span className="inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600">
+            &#8377; {price}
+          </span>
         </div>
-      </div>
-      <div className="px-6 pt-4 pb-2">
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          {size}
-        </span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          &#8377; {price}
-        </span>
-      </div>
-      { (
-        <div className="flex justify-center mb-2 gap-2">
+        <div className="flex justify-between items-center">
           <button
-            className="flex items-center justify-center bg-gray-900 px-2 py-1 text-sm text-white transition hover:bg-gray-700"
+            className={`flex items-center justify-center bg-gray-900 text-white text-sm px-4 py-2 rounded-lg transition hover:bg-gray-700 ${
+              cart.includes(id) ? "opacity-70 cursor-not-allowed" : ""
+            }`}
             onClick={() => handleAddToCart(id)}
+            disabled={cart.includes(id)}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="mr-2 h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-            </svg>
-            {cart.includes(id) ? "Added to cart" : "Add to cart"}
+            Add to Cart
           </button>
-          
           <button
-          className=" bg-gray-900 px-4 py-1 text-sm text-white transition hover:bg-gray-700" onClick={handleViewer}
-          >3D viewer
+            className="bg-gray-900 text-white text-sm px-4 py-2 rounded-lg transition hover:bg-gray-700"
+            onClick={handleViewer}
+          >
+            3D Viewer
           </button>
         </div>
-      )}
+      </div>
     </div>
   );
 };
