@@ -14,6 +14,10 @@ const Products = () => {
     isVisible: false,
   });
 
+  useEffect(() => {
+    console.log(viewerDetails);
+  }, [viewerDetails]);
+
   return (
     <>
       <div>

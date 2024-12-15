@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { useCart } from "../context/cartContext";
 
 interface CardProps {
@@ -9,10 +9,17 @@ interface CardProps {
   price: number;
   image: string;
   // viewerDetails:object;
-  setViewerDetails:Function;
+  setViewerDetails: Function;
 }
 
-const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => {
+const Card = ({
+  id,
+  brand,
+  size,
+  price,
+  image,
+  setViewerDetails,
+}: CardProps) => {
   const { cart, addTocart, remove } = useCart();
 
   const handleAddToCart = (id: number) => {
@@ -22,11 +29,13 @@ const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => 
   const handleRemove = (id: number) => {
     remove(id);
   };
-  const handleViewer=()=>{
+  const handleViewer = () => {
+    
     setViewerDetails({
-      isVisible: true, viewId:""
-    })
-  }
+      isVisible: true,
+      viewId: id,
+    });
+  };
   return (
     <div className="bg-white border-white border-2 max-w-sm rounded overflow-hidden shadow-lg flex flex-col m-4">
       <div className="aspect-w-3 aspect-h-4">
@@ -49,7 +58,7 @@ const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => 
           &#8377; {price}
         </span>
       </div>
-      { (
+      {
         <div className="flex justify-center mb-2 gap-2">
           <button
             className="flex items-center justify-center bg-gray-900 px-2 py-1 text-sm text-white transition hover:bg-gray-700"
@@ -65,13 +74,15 @@ const Card = ({ id, brand, size, price, image,setViewerDetails }: CardProps) => 
             </svg>
             {cart.includes(id) ? "Added to cart" : "Add to cart"}
           </button>
-          
+
           <button
-          className=" bg-gray-900 px-4 py-1 text-sm text-white transition hover:bg-gray-700" onClick={handleViewer}
-          >3D viewer
+            className=" bg-gray-900 px-4 py-1 text-sm text-white transition hover:bg-gray-700"
+            onClick={handleViewer}
+          >
+            3D viewer
           </button>
         </div>
-      )}
+      }
     </div>
   );
 };
