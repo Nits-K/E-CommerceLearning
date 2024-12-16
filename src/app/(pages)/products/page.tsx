@@ -4,19 +4,14 @@ import Footer from "@/app/components/Footer";
 import Slider from "../../components/slider";
 import Card from "@/app/components/card";
 import productlist from "@/app/assets/data/productlist.json";
-import { useEffect, useState } from "react";
-
+import { useState } from "react";
 import Viewer from "../../components/viewer";
 
 const Products = () => {
   const [viewerDetails, setViewerDetails] = useState({
-    viewID: "",
     isVisible: false,
+    viewId: "",
   });
-
-  useEffect(() => {
-    console.log(viewerDetails);
-  }, [viewerDetails]);
 
   return (
     <>
@@ -35,29 +30,30 @@ const Products = () => {
               size={product.size}
               price={product.price}
               image={product.image}
-              // viewerDetails={viewerDetails}
-              setViewerDetails={setViewerDetails}
+              viewId={product.viewId} // Passing the unique viewId
+              setViewerDetails={setViewerDetails} // To control the viewer visibility and model
             />
           ))}
         </div>
-        {viewerDetails.isVisible ? (
-          <div className="viewer-popup">
-            <Viewer viewId={viewerDetails.viewID} />
-            <button
-              className="close"
-              onClick={() => {
-                setViewerDetails({ isVisible: false, viewID: "" });
-              }}
-            >
-              Close
-            </button>
+
+        {/* The Viewer Popup */}
+        {viewerDetails.isVisible && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="viewer-popup bg-white p-8 rounded-lg shadow-lg">
+              <Viewer viewId={viewerDetails.viewId} />
+              <button
+                className="close absolute top-4 right-4 bg-red-600 text-white p-2 rounded-full"
+                onClick={() => setViewerDetails({ isVisible: false, viewId: "" })}
+              >
+                Close
+              </button>
+            </div>
           </div>
-        ) : (
-          ""
         )}
       </div>
       <Footer />
     </>
   );
 };
+
 export default Products;

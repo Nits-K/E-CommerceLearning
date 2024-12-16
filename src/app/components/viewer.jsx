@@ -2,26 +2,37 @@ import { useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
-import Denim from "./Denim";
-import Tshirt_1 from "./Tshirt_1";
+// Importing the specific product components
+import Tshirt from "@/app/components/Tshirt";
+import T2 from "@/app/components/T2"
+// import Shoes from "@/app/components/Shoes"; // Example of another product type
+
+// You can add more components as needed for different products
+const getProductComponent = (viewId) => {
+  switch (viewId) {
+    case "tshirt":
+      return <Tshirt scale={[1.5, 1.5, 1.5]} />;
+    case "denim":
+      return <T2/>;
+    // Add more cases for other products
+    default:
+      return <Tshirt />; // Default fallback product if none match
+  }
+};
 
 function Viewer({ viewId }) {
-  console.log("viewer.jsx", viewId);
-  const modelData = {
-    1: <Tshirt_1 />,
-    2: <Denim />,
-    // add rest of product ids and there equivalent models
-  };
-  const [count, setCount] = useState(0);
-  console.log(modelData[viewId]);
   return (
-    <>
-      <Canvas>
-        <ambientLight />
-        <OrbitControls />
-        <Suspense fallback={null}>{modelData[viewId]}</Suspense>
-      </Canvas>
-    </>
+    <Canvas camera={{
+      position:[0,400,20],
+      rotation:[0,0,0],
+    }}>
+      <ambientLight />
+      <OrbitControls target={[0,0,0]} />
+      <Suspense fallback={<div>Loading 3D Model...</div>}> 
+        {/* Render the model dynamically based on viewId */}
+        {getProductComponent(viewId)}
+      </Suspense>
+    </Canvas>
   );
 }
 

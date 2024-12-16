@@ -1,38 +1,42 @@
 [
     {
         "id":1,
-        "brand":"Jack & Jones",
+        "brand":"Tshirt By Jack & Jones",
         "size":"XL",
         "price":540,
-        "image":"image5.avif"
-        
+        "image":"tshirt.png",
+        "viewId":"tshirt"
     },
     {
         "id":2,
-        "brand":"Flick",
+        "brand":"Denim By Flick",
         "size":"XL",
         "price":510,
-        "image":"image5.avif"
+        "image":"denim.png",
+        "viewId":"denim"
     },
     {
         "id":3,
-        "brand":"Ripper",
+        "brand":"Tshirt By Ripper",
         "size":"M",
         "price":500,
-        "image":"image5.avif"
+        "image":"tshirt2.png",
+        "viewId":"tshirt"
     },
     {
         "id":4,
-        "brand":"Roadster",
+        "brand":"Shirt By Roadster",
         "size":"XXL",
         "price":560,
-        "image":"image5.avif"
+        "image":"shirt.png",
+        "viewId":"tshirt"
     },
     {
         "id":5,
-        "brand":"Flick",
+        "brand":"Tshirt By Flick",
         "size":"L",
         "price":540,
-        "image":"image5.avif"
+        "image":"tshirt3.png",
+        "viewId":"tshirt"
     }
 ]
